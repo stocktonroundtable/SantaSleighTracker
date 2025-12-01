@@ -66,6 +66,41 @@
     }
     .btn:disabled{opacity:.7; cursor:not-allowed}
 
+     /* ⭐ DONATE BUTTON ⭐ */
+    .donate-box {
+      position: fixed;
+      bottom: 70px; /* desktop + landscape */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2000;
+      text-align: center;
+    }
+
+    .donate-btn {
+      background: #d31c1c;
+      color: #fff;
+      font-weight: 800;
+      padding: 12px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      display: inline-block;
+      font-size: 1.05em;
+    }
+
+    #snow { position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
+
+    /* 📱 Mobile portrait — dynamic spacing based on viewport height */
+    @media (max-width: 600px) and (orientation: portrait) {
+
+      .status-popup { font-size: 1em; padding: 12px 10px; min-width: 160px; }
+      .info-popup { font-size: 0.8em; bottom: 10px; gap: 8px; }
+
+      .donate-box {
+        bottom: calc(12vh) !important; /* 📌 dynamically perfect on all phones */
+      }
+    }
+
     #snow { position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
 
     @media (max-width: 600px) {
@@ -78,6 +113,13 @@
 </head>
 <body>
   <div class="status-popup" id="status-box">🎄 Santa is currently in Lapland preparing for Christmas!</div>
+
+  <!-- ⭐ DONATE BUTTON ⭐ -->
+  <div class="donate-box">
+    <a href="https://checkout.square.site/merchant/MLQN7JP42PV16/checkout/3UVYAAOYKOSHGRWYU5RQO73W" target="_blank" class="donate-btn">
+      🎁 DONATE & SUPPORT US
+    </a>
+  </div>
 
   <div class="info-popup">
     <span class="muted" id="lastUpdated">Last update: —</span>
